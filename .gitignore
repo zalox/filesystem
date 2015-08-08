@@ -7,10 +7,37 @@ src/CMakeFiles/
 src/Makefile
 src/cmake_install.cmake
 src/compile_commands.json
-src/libfilesystem.so
 tests/CMakeFiles/
 tests/Makefile
 tests/cmake_install.cmake
 tests/compile_commands.json
 tests/filesystem_tests
 .build
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
