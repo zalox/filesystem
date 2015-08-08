@@ -1,0 +1,16 @@
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+compile_commands.json
+src/CMakeFiles/
+src/Makefile
+src/cmake_install.cmake
+src/compile_commands.json
+src/libfilesystem.so
+tests/CMakeFiles/
+tests/Makefile
+tests/cmake_install.cmake
+tests/compile_commands.json
+tests/filesystem_tests
+.build
