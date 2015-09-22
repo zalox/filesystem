@@ -4,16 +4,18 @@
 #include <vector>
 #include <sstream>
 #include <fstream>
-#include "boost/filesystem.hpp"
+#include <boost/filesystem.hpp>
 
 namespace fs = boost::filesystem;
 
-class filesystem {
-  static const unsigned DIRS = 1;
-  static const unsigned FILES = 2;
-  static const unsigned ALL = 3;
-  static const unsigned SORTED = 4;
+enum filesystem_options {
+  DIRS = 0x1,
+  FILES = 0x2,
+  ALL = DIRS | FILES,
+  SORTED = ALL | 0x4
+};
 
+class filesystem {
 public:
   bool write(const std::string &path, const std::string &new_content) 
   {
@@ -75,17 +77,17 @@ public:
     
   static auto dirs(const std::string &path) 
   {
-    return filesystem::get_directory_content(path, DIRS + SORTED);
+    return filesystem::get_directory_content(path, DIRS | SORTED);
   }
   
   static auto files(const std::string &path)
   {
-    return filesystem::get_directory_content(path, FILES + SORTED);
+    return filesystem::get_directory_content(path, FILES | SORTED);
   }
   
   static auto contents(const std::string &path)
   {
-    return filesystem::get_directory_content(path, ALL + SORTED); // ALL = DIRS + FILES
+    return filesystem::get_directory_content(path, ALL | SORTED); // ALL = DIRS | FILES
   }
   
   static auto seperate_contents(const std::string &path)
